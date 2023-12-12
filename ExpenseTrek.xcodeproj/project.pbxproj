@@ -21,6 +21,7 @@
 		8717DF002B2864F8006A75F4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DEFF2B2864F8006A75F4 /* Search.swift */; };
 		8717DF022B28650D006A75F4 /* Graphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF012B28650D006A75F4 /* Graphs.swift */; };
 		8717DF042B28651F006A75F4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF032B28651F006A75F4 /* Settings.swift */; };
+		8717DF062B28676A006A75F4 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF052B28676A006A75F4 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8717DEFF2B2864F8006A75F4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8717DF012B28650D006A75F4 /* Graphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphs.swift; sourceTree = "<group>"; };
 		8717DF032B28651F006A75F4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8717DF052B28676A006A75F4 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				8717DEF22B28563E006A75F4 /* Constants.swift */,
+				8717DF052B28676A006A75F4 /* View+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				8717DF042B28651F006A75F4 /* Settings.swift in Sources */,
 				8717DEDE2B2851D5006A75F4 /* ExpenseTrekApp.swift in Sources */,
 				8717DF002B2864F8006A75F4 /* Search.swift in Sources */,
+				8717DF062B28676A006A75F4 /* View+Extensions.swift in Sources */,
 				8717DEF32B28563E006A75F4 /* Constants.swift in Sources */,
 				8717DF022B28650D006A75F4 /* Graphs.swift in Sources */,
 				8717DEF72B286296006A75F4 /* Category.swift in Sources */,
