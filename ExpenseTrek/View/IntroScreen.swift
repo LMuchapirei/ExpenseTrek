@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroScreen: View {
+    @AppStorage("isFirstTime") private var isFirstTime: Bool = true
     var body: some View {
         VStack (spacing:15){
             Text("What's New in the\nExpense Tracker")
@@ -28,7 +29,10 @@ struct IntroScreen: View {
             
             Spacer(minLength: 10)
             
-            Button(action: {}, label: {
+            Button(action: {
+                isFirstTime = false
+            }, label: {
+                /// Update the app storage to indicate that this page won't appear when the app opens again
                 Text("Continue")
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
@@ -43,7 +47,7 @@ struct IntroScreen: View {
     /// Point View
     @ViewBuilder
     func PointView(symbol: String, title: String,subtitle: String)-> some View {
-        HStack(spacing:15){
+        HStack(spacing:20){
             Image(systemName: symbol)
                 .font(.largeTitle)
                 .foregroundStyle(appTint.gradient)
