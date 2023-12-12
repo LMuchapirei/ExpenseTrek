@@ -10,6 +10,9 @@ import SwiftUI
 struct Recents: View {
     /// User Properties
     @AppStorage("userName") private var userName: String = ""
+    /// View properties
+    @State private var startDate: Date = .now.startOfMonth
+    @State private var endDate: Date = .now.endOfMonth
     var body: some View {
         GeometryReader {
             /// For Animation purposes
@@ -19,6 +22,17 @@ struct Recents: View {
                 ScrollView(.vertical){
                     LazyVStack(spacing:10,pinnedViews: [.sectionHeaders]){
                         Section{
+                            /// Date Filter Button
+                            Button(action:{
+                                
+                            }) {
+                                Text("\(format(date:startDate,format:"dd - MMM yy")) to \(format(date:endDate,format: "dd - MMM yy"))")
+                                    .font(.caption2)
+                                    .foregroundStyle(.gray)
+                            }
+                            .hSpacing(.leading)
+                            
+                            /// Card View
                             
                         } header: {
                             HeaderView(size)
@@ -44,6 +58,11 @@ struct Recents: View {
                         .foregroundStyle(.gray)
                 }
             }
+            .visualEffect { content, geometryProxy in
+                content
+                    .scaleEffect(headerScale(size,proxy: geometryProxy),anchor: .top)
+            }
+            
             Spacer(minLength: 0)
             NavigationLink {
                 
@@ -57,20 +76,49 @@ struct Recents: View {
                     .contentShape(.circle)
             }
         }
-        .visualEffect { content, geometryProxy in
-                content
-        }
- 
-        .padding(.bottom,5)
-            .background{
+        .padding(.bottom,userName.isEmpty ? 10:5)
+        .background{
+            VStack(spacing: 0){
                 Rectangle()
                     .fill(.ultraThinMaterial)
-                    .padding(.horizontal,-15)
-                    .padding(.top,-(safeArea.top + 15))
+                Divider()
             }
+            .visualEffect { content, geometryProxy in
+                content
+                    .opacity(headerBGOpacity(geometryProxy))
+            }
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .padding(.horizontal,-15)
+                .padding(.top,-(safeArea.top + 15))
+        }
+    }
+    
+    func headerBGOpacity(_ proxy: GeometryProxy)-> CGFloat {
+        let minY = proxy.frame(in: .scrollView).minY + safeArea.top  /// Since we ignored the safe area by applying the negative padding, the minY starts with the safe area top value instead of zero
+        /// Instead of applying the opacity instantly, we convert the minY into a series of progress ranging from 0 to 1, so the opacity effect will be more subtle
+        return minY > 0 ? 0 : (-minY/15 )
+    }
+    
+    func headerScale(_ size: CGSize, proxy: GeometryProxy)-> CGFloat {
+        let minY = proxy.frame(in: .scrollView).minY
+        let screenHeight = size.height
+        
+        let progress = minY / screenHeight
+        let scale = (min(max(progress,0),1)) * 0.3
+        return 1 + scale
+    }
+    
+    func format(date: Date,format: String)-> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date)
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
+
