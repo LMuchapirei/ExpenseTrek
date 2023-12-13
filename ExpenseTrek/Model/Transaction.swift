@@ -32,3 +32,7 @@ struct Transaction: Identifiable {
         return tints.first(where: { $0.color == tintColor})?.value ?? appTint
     }
 }
+
+/// Sample Transactions for UI Building
+
+

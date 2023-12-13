@@ -45,6 +45,7 @@
 		8717DF052B28676A006A75F4 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		8717DF072B289953006A75F4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		8717DF0A2B289DFD006A75F4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8717DF0C2B28A1F5006A75F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 				8717DEEB2B28525F006A75F4 /* View */,
 				8717DEE12B2851DB006A75F4 /* Assets.xcassets */,
 				8717DEE32B2851DB006A75F4 /* Preview Content */,
+				8717DF0C2B28A1F5006A75F4 /* README.md */,
 			);
 			path = ExpenseTrek;
 			sourceTree = "<group>";
