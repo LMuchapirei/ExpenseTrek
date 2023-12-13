@@ -40,6 +40,11 @@ struct Recents: View {
                             
                             /// Custom Segmented Control
                             CustomSegmentedControl()
+                            
+                            ForEach(sampleTransactions){ transaction in
+                                TransactionCardView(transaction: transaction)
+                                
+                            }
                         } header: {
                             HeaderView(size)
                         }
