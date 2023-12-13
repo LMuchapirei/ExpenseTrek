@@ -13,6 +13,9 @@ struct Recents: View {
     /// View properties
     @State private var startDate: Date = .now.startOfMonth
     @State private var endDate: Date = .now.endOfMonth
+    @State private var selectedCategory: Category = .expense
+    /// For Animation
+    @Namespace private var animation
     var body: some View {
         GeometryReader {
             /// For Animation purposes
@@ -33,13 +36,17 @@ struct Recents: View {
                             .hSpacing(.leading)
                             
                             /// Card View
+                            CardView(income: 2345, expenses: 893)
                             
+                            /// Custom Segmented Control
+                            CustomSegmentedControl()
                         } header: {
                             HeaderView(size)
                         }
                     }
                     .padding(15)
                 }
+                .background(.gray.opacity(0.15))
             }
         }
     }
@@ -108,12 +115,34 @@ struct Recents: View {
         let scale = (min(max(progress,0),1)) * 0.3
         return 1 + scale
     }
-    
-    func format(date: Date,format: String)-> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: date)
+    /// Segmented Control
+    @ViewBuilder
+    func CustomSegmentedControl()-> some View {
+        HStack(spacing:0){
+            ForEach(Category.allCases,id:\.rawValue){ category in
+                Text(category.rawValue)
+                    .hSpacing()
+                    .padding(.vertical,10)
+                    .background {
+                        if category == selectedCategory {
+                            Capsule()
+                                .fill(.background)
+                                .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
+                        }
+                    }.contentShape(.capsule)
+                    .onTapGesture {
+                        withAnimation(.snappy) {
+                            selectedCategory = category
+                        }
+                    }
+                
+            }
+        }
+        .background(.gray.opacity(0.15),in:.capsule)
+        .padding(.top,5)
     }
+    
+ 
 }
 
 #Preview {
