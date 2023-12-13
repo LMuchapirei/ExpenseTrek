@@ -35,4 +35,9 @@ struct Transaction: Identifiable {
 
 /// Sample Transactions for UI Building
 
-
+var sampleTransactions: [Transaction] = [
+    .init(title: "KeyCron V2", remarks: "Special Keyboard", amount: 129, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
+    .init(title: "Spotify", remarks: "Subscription", amount: 2.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!),
+    .init(title: "Payment", remarks: "Payment Monthly", amount: 2893, dateAdded: .now, category: .income, tintColor: tints.randomElement()!),
+    .init(title: "Coursera+", remarks: "Subscription", amount: 12.99, dateAdded: .now, category: .expense, tintColor: tints.randomElement()!)
+]
