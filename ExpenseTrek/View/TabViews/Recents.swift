@@ -13,6 +13,7 @@ struct Recents: View {
     /// View properties
     @State private var startDate: Date = .now.startOfMonth
     @State private var endDate: Date = .now.endOfMonth
+    @State private var showFilterView: Bool = false
     @State private var selectedCategory: Category = .expense
     /// For Animation
     @Namespace private var animation
@@ -27,7 +28,7 @@ struct Recents: View {
                         Section{
                             /// Date Filter Button
                             Button(action:{
-                                
+                                showFilterView = true
                             }) {
                                 Text("\(format(date:startDate,format:"dd - MMM yy")) to \(format(date:endDate,format: "dd - MMM yy"))")
                                     .font(.caption2)
@@ -40,8 +41,9 @@ struct Recents: View {
                             
                             /// Custom Segmented Control
                             CustomSegmentedControl()
+                                .padding(.bottom,10)
                             
-                            ForEach(sampleTransactions){ transaction in
+                            ForEach(sampleTransactions.filter({ $0.category == selectedCategory.rawValue })){ transaction in
                                 TransactionCardView(transaction: transaction)
                                 
                             }
@@ -52,6 +54,28 @@ struct Recents: View {
                     .padding(15)
                 }
                 .background(.gray.opacity(0.15))
+            }
+            .overlay {
+                ZStack {
+                    if showFilterView {
+                        DateFilterView(
+                            start:startDate,
+                            end:endDate,
+                            onSubmit:{
+                                start,end in
+                                startDate = start
+                                endDate = end
+                                showFilterView = false
+                                
+                            },
+                            onClose:{
+                                showFilterView = false
+                            }
+                        )
+                            .transition(.move(edge:.leading))
+                    }
+                }
+                .animation(.snappy,value: showFilterView)
             }
         }
     }
@@ -120,6 +144,7 @@ struct Recents: View {
         let scale = (min(max(progress,0),1)) * 0.3
         return 1 + scale
     }
+    
     /// Segmented Control
     @ViewBuilder
     func CustomSegmentedControl()-> some View {

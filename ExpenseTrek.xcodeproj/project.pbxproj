@@ -25,6 +25,8 @@
 		8717DF082B289953006A75F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF072B289953006A75F4 /* Date+Extensions.swift */; };
 		8717DF0B2B289DFD006A75F4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0A2B289DFD006A75F4 /* CardView.swift */; };
 		8717DF0E2B29B0CD006A75F4 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */; };
+		8717DF102B29B8C3006A75F4 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */; };
+		875EA0622B2AE332002D296A /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EA0612B2AE332002D296A /* DateFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		8717DF0A2B289DFD006A75F4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8717DF0C2B28A1F5006A75F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
+		8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		875EA0612B2AE332002D296A /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 			children = (
 				8717DF0A2B289DFD006A75F4 /* CardView.swift */,
 				8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */,
+				8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */,
+				875EA0612B2AE332002D296A /* DateFilterView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -223,9 +229,11 @@
 			files = (
 				8717DEFB2B2863A2006A75F4 /* TintColor.swift in Sources */,
 				8717DEFE2B2864E5006A75F4 /* Recents.swift in Sources */,
+				875EA0622B2AE332002D296A /* DateFilterView.swift in Sources */,
 				8717DEF92B2862E6006A75F4 /* Transaction.swift in Sources */,
 				8717DEE02B2851D5006A75F4 /* ContentView.swift in Sources */,
 				8717DF0B2B289DFD006A75F4 /* CardView.swift in Sources */,
+				8717DF102B29B8C3006A75F4 /* SwipeAction.swift in Sources */,
 				8717DEF02B285378006A75F4 /* IntroScreen.swift in Sources */,
 				8717DEF52B285D0D006A75F4 /* Tab.swift in Sources */,
 				8717DF042B28651F006A75F4 /* Settings.swift in Sources */,
