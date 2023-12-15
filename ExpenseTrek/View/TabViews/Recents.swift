@@ -54,9 +54,10 @@ struct Recents: View {
                     .padding(15)
                 }
                 .background(.gray.opacity(0.15))
+                .blur(radius: showFilterView ? 8 : 0)
+                .disabled(showFilterView)
             }
             .overlay {
-                ZStack {
                     if showFilterView {
                         DateFilterView(
                             start:startDate,
@@ -76,7 +77,7 @@ struct Recents: View {
                     }
                 }
                 .animation(.snappy,value: showFilterView)
-            }
+            
         }
     }
     
@@ -88,7 +89,7 @@ struct Recents: View {
                 Text("Welcome")
                     .font(.title.bold())
                 
-                if userName.isEmpty {
+                if !userName.isEmpty {
                     Text(userName)
                         .font(.callout)
                         .foregroundStyle(.gray)
