@@ -87,7 +87,14 @@ struct LockView<Content: View>: View {
             if newValue {
                 unlockView()
             }
-            
+        }
+        
+        /// Locking When App Goes Background
+        .onChange(of: phase) { oldValue, newValue in
+            if newValue != .active && lockWhenAppGoesBackground {
+                isUnlocked = false
+                pin = ""
+            }
         }
     }
     private func unlockView() {
@@ -96,6 +103,12 @@ struct LockView<Content: View>: View {
                 /// Requesting Biometric Unlock
                 if let result = try? await context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Unlock the View"),result {
                         print("Unlocked")
+                    withAnimation(.snappy,completionCriteria:.logicallyComplete){
+                        isUnlocked = true
+                    } completion: {
+                        pin = ""
+                    }
+                    
                 }
             }
             
@@ -229,6 +242,7 @@ struct LockView<Content: View>: View {
                         } completion: {
                             // Clearing Pin
                             pin = ""
+                            noBiometricAccess = !isBiometricAvailable
                         }
                     } else {
                         print("Wrong Pin")
@@ -250,7 +264,7 @@ struct LockView<Content: View>: View {
 }
 struct TempView : View {
     var body: some View {
-        LockView(lockType: .biometric, lockPin: "0329", isEnabled: true) {
+        LockView(lockType: .both, lockPin: "0329", isEnabled: true) {
             VStack( spacing: 15) {
                 Image(systemName: "globe")
                     .imageScale(.large)

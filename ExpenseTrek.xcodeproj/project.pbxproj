@@ -27,6 +27,7 @@
 		8717DF0E2B29B0CD006A75F4 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */; };
 		8717DF102B29B8C3006A75F4 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */; };
 		875EA0622B2AE332002D296A /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EA0612B2AE332002D296A /* DateFilterView.swift */; };
+		87FB4A9D2B2C5468004D545F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB4A9C2B2C5468004D545F /* LockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		875EA0612B2AE332002D296A /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
+		87FB4A9C2B2C5468004D545F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				8717DF0D2B29B0CD006A75F4 /* TransactionCardView.swift */,
 				8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */,
 				875EA0612B2AE332002D296A /* DateFilterView.swift */,
+				87FB4A9C2B2C5468004D545F /* LockView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				8717DF002B2864F8006A75F4 /* Search.swift in Sources */,
 				8717DF082B289953006A75F4 /* Date+Extensions.swift in Sources */,
 				8717DF062B28676A006A75F4 /* View+Extensions.swift in Sources */,
+				87FB4A9D2B2C5468004D545F /* LockView.swift in Sources */,
 				8717DEF32B28563E006A75F4 /* Constants.swift in Sources */,
 				8717DF022B28650D006A75F4 /* Graphs.swift in Sources */,
 				8717DEF72B286296006A75F4 /* Category.swift in Sources */,
@@ -381,6 +385,7 @@
 				DEVELOPMENT_TEAM = 583MU3G3UH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = 6.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,6 +415,7 @@
 				DEVELOPMENT_TEAM = 583MU3G3UH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = 6.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

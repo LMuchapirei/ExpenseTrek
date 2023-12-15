@@ -1,5 +1,6 @@
-#  Continue @18:00 minutes
+#  Continue @episode 3
 
-the other to do swipe actions 9:03
+the other to do swipe actions Done
+the other to do is the lock and local auth iOS
 
 
