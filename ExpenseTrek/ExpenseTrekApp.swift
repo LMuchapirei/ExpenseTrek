@@ -11,9 +11,8 @@ import SwiftUI
 struct ExpenseTrekApp: App {
     var body: some Scene {
         WindowGroup {
-            // Change this later
              ContentView()
-  //            TempView()
         }
+        .modelContainer(for:[Transaction.self])
     }
 }
