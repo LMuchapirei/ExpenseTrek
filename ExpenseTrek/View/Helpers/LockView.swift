@@ -95,6 +95,10 @@ struct LockView<Content: View>: View {
                 isUnlocked = false
                 pin = ""
             }
+            
+            if newValue == .active && !isUnlocked && isEnabled { // second condition in the AND clause avoid unnecessary face ID popups by cross-verifying
+                unlockView()
+            }
         }
     }
     private func unlockView() {
