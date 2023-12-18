@@ -28,6 +28,7 @@
 		8717DF102B29B8C3006A75F4 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */; };
 		875EA0622B2AE332002D296A /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EA0612B2AE332002D296A /* DateFilterView.swift */; };
 		87FB4A9D2B2C5468004D545F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB4A9C2B2C5468004D545F /* LockView.swift */; };
+		87FB4A9F2B302679004D545F /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB4A9E2B302679004D545F /* NewExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8717DF0F2B29B8C3006A75F4 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		875EA0612B2AE332002D296A /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
 		87FB4A9C2B2C5468004D545F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		87FB4A9E2B302679004D545F /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				8717DF092B289DE7006A75F4 /* Helpers */,
 				8717DEEF2B285378006A75F4 /* IntroScreen.swift */,
+				87FB4A9E2B302679004D545F /* NewExpenseView.swift */,
 				8717DEFC2B2864C4006A75F4 /* TabViews */,
 			);
 			path = View;
@@ -238,6 +241,7 @@
 				8717DF0B2B289DFD006A75F4 /* CardView.swift in Sources */,
 				8717DF102B29B8C3006A75F4 /* SwipeAction.swift in Sources */,
 				8717DEF02B285378006A75F4 /* IntroScreen.swift in Sources */,
+				87FB4A9F2B302679004D545F /* NewExpenseView.swift in Sources */,
 				8717DEF52B285D0D006A75F4 /* Tab.swift in Sources */,
 				8717DF042B28651F006A75F4 /* Settings.swift in Sources */,
 				8717DEDE2B2851D5006A75F4 /* ExpenseTrekApp.swift in Sources */,
