@@ -1,0 +1,38 @@
+//
+//  FilterTransactionsView.swift
+//  ExpenseTrek
+//
+//  Created by Linval Muchapirei on 19/12/2023.
+//
+
+import SwiftUI
+import SwiftData
+
+
+struct FilterTransactionsView<Content:View>: View {
+    var content: ([Transaction]) -> Content
+    @Query(animation:.snappy) private var transactions:[Transaction]
+    
+    init(category: Category?,searchText: String,@ViewBuilder content: @escaping ([Transaction])-> Content){
+        /// Custom Predicate
+    
+        let rawValue = category?.rawValue ?? ""
+        let predicate = #Predicate<Transaction> { transaction in
+            /// apply category filter if its available
+            return (transaction.title.localizedStandardContains(searchText) ||
+                    transaction.remarks.localizedStandardContains(searchText)) && (rawValue.isEmpty ? true : transaction.category == rawValue)
+        }
+        
+        _transactions = Query(filter:predicate,sort:[
+            SortDescriptor(\Transaction.dateAdded,order:.reverse)
+        ],animation: .snappy)
+        self.content = content
+    }
+    
+    
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+
