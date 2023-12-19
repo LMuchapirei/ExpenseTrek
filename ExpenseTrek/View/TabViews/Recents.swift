@@ -48,7 +48,7 @@ struct Recents: View {
                             
                             ForEach(transactions.filter({ $0.category == selectedCategory.rawValue })){ transaction in
                                 
-                                NavigationLink(destination: NewExpenseView(
+                                NavigationLink(destination: TransactionView(
                                     editTransaction:transaction)) {
                                     TransactionCardView(transaction: transaction)
                                 }
@@ -110,7 +110,7 @@ struct Recents: View {
             
             Spacer(minLength: 0)
             NavigationLink {
-                NewExpenseView()
+                TransactionView()
             } label: {
                 Image(systemName: "plus")
                     .font(.title3)
