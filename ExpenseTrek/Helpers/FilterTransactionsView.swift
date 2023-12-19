@@ -15,12 +15,40 @@ struct FilterTransactionsView<Content:View>: View {
     
     init(category: Category?,searchText: String,@ViewBuilder content: @escaping ([Transaction])-> Content){
         /// Custom Predicate
-    
         let rawValue = category?.rawValue ?? ""
         let predicate = #Predicate<Transaction> { transaction in
             /// apply category filter if its available
             return (transaction.title.localizedStandardContains(searchText) ||
                     transaction.remarks.localizedStandardContains(searchText)) && (rawValue.isEmpty ? true : transaction.category == rawValue)
+        }
+        
+        _transactions = Query(filter:predicate,sort:[
+            SortDescriptor(\Transaction.dateAdded,order:.reverse)
+        ],animation: .snappy)
+        self.content = content
+    }
+    
+    init(startDate: Date,endDate: Date,@ViewBuilder content: @escaping ([Transaction])-> Content){
+        /// Custom Predicate using start and end date
+
+        let predicate = #Predicate<Transaction> { transaction in
+            /// apply category filter if its available
+            return transaction.dateAdded >=  startDate && transaction.dateAdded <= endDate
+        }
+        
+        _transactions = Query(filter:predicate,sort:[
+            SortDescriptor(\Transaction.dateAdded,order:.reverse)
+        ],animation: .snappy)
+        self.content = content
+    }
+    
+    init(startDate: Date,endDate: Date,category: Category?,@ViewBuilder content: @escaping ([Transaction])-> Content){
+        /// Custom Predicate using start and end date
+        let rawValue = category?.rawValue ?? ""
+
+        let predicate = #Predicate<Transaction> { transaction in
+            /// apply category filter if its available
+            return transaction.dateAdded >=  startDate && transaction.dateAdded <= endDate && (rawValue.isEmpty ? true : transaction.category == rawValue)
         }
         
         _transactions = Query(filter:predicate,sort:[

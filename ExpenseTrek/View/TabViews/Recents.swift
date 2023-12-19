@@ -38,7 +38,7 @@ struct Recents: View {
                             }
                             .hSpacing(.leading)
                             
-                            FilterTransactionsView(startDate: startDate, endDate: endDate) { transactions in
+                            FilterTransactionsView(startDate: startDate, endDate: endDate,category:selectedCategory) { transactions in
                                 /// Card View
                                 CardView(
                                     income: total(transactions, category: .income),
@@ -48,7 +48,7 @@ struct Recents: View {
                                 CustomSegmentedControl()
                                     .padding(.bottom,10)
                                 
-                                ForEach(transactions.filter({ $0.category == selectedCategory.rawValue })){ transaction in
+                                ForEach(transactions){ transaction in
                                     NavigationLink(value: transaction) {
                                         TransactionCardView(transaction: transaction)
                                     }
